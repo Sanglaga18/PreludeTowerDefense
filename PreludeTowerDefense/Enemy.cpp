@@ -32,3 +32,13 @@ int Enemy::getDroppedGold() {
 int Enemy::getHealth() {
     return health;
 }
+int Enemy::getSpeed() {
+    return speed;
+}
+Position Enemy::getPosition() {
+    return position;
+}
+void Enemy::setPosition(int x, int y) {
+    position.x = x;
+    position.y = y;
+}
