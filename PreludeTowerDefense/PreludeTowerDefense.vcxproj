@@ -130,6 +130,8 @@
     <ClCompile Include="CannonTower.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FastEnemy.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="PowerTower.cpp" />
     <ClCompile Include="PreludeTowerDefense.cpp" />
@@ -140,6 +142,8 @@
     <ClInclude Include="CannonTower.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FastEnemy.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="PowerTower.h" />
     <ClInclude Include="TankEnemy.h" />
