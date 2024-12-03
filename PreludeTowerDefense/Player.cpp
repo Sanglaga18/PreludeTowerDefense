@@ -3,8 +3,8 @@
 using namespace std;
 
 
-Player::Player(Position initialPosition)
-    : health(20), gold(35), position(initialPosition) {}
+Player::Player(int initialHealth, int initialGold)
+    : health(20), gold(35) {}
 
 
 int Player::getHealth() const {
@@ -12,9 +12,6 @@ int Player::getHealth() const {
 }
 int Player::getGold() const {
     return gold;
-}
-Position Player::getPosition() const {
-    return position;
 }
 
 
@@ -24,10 +21,6 @@ void Player::setHealth(int newHealth) {
 void Player::setGold(int newGold) {
     gold = newGold;
 }
-void Player::setPosition(Position newPosition) {
-    position = newPosition;
-}
-
 
 void Player::takeDamage(int damage) {
     health -= damage;
