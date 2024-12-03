@@ -33,7 +33,16 @@ int Enemy::getHealth() {
     return health;
 }
 
+int Enemy::getSpeed() {
+    return speed;
+}
+
+void Enemy::setPosition(int x, int y) {
+    position.x = x;
+    position.y = y;
+}
 // Getter cho position
 Position Enemy::getPosition() const {
     return position;  // Trả về đối tượng position của Enemy
+
 }

@@ -16,5 +16,7 @@ public:
     void takeDamage(int damage); // Phương thức nhận sát thương
     int getDroppedGold();   // Getter cho droppedGold
     int getHealth();        // Getter cho health
+    int getSpeed();
+    void setPosition(int x, int y);
     Position getPosition() const; // Getter cho position
 };
