@@ -10,7 +10,7 @@ Enemy::Enemy(int _health, int _x, int _y, int _speed, int _droppedGold) {
 }
 // Phương thức di chuyển kẻ địch
 void Enemy::move() {
-    position.y -= speed;    // Cập nhật tọa độ y
+    position.y += speed;    // Cập nhật tọa độ y và đi chuyển sang phải
     cout << "Enemy moved to position: (" << position.x << ", " << position.y << ")" << endl;
 }
 
@@ -32,13 +32,17 @@ int Enemy::getDroppedGold() {
 int Enemy::getHealth() {
     return health;
 }
+
 int Enemy::getSpeed() {
     return speed;
 }
-Position Enemy::getPosition() {
-    return position;
-}
+
 void Enemy::setPosition(int x, int y) {
     position.x = x;
     position.y = y;
+}
+// Getter cho position
+Position Enemy::getPosition() const {
+    return position;  // Trả về đối tượng position của Enemy
+
 }

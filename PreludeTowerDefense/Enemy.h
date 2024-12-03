@@ -17,6 +17,6 @@ public:
     int getDroppedGold();   // Getter cho droppedGold
     int getHealth();        // Getter cho health
     int getSpeed();
-    Position getPosition();
     void setPosition(int x, int y);
+    Position getPosition() const; // Getter cho position
 };
