@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "Enemy.h"
+#include "FastEnemy.h"
 #include "Position.h"
 using namespace std;
 int main() {
