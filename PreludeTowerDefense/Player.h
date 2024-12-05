@@ -22,5 +22,6 @@ public:
     //phuong thuc
     void takeDamage(int damage);
     void addGold(int amount);
+    void subGold(int amount);
 };
 

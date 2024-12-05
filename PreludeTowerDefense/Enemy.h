@@ -9,9 +9,9 @@ private:
     Position position;      // Vị trí trên bản đồ
     int speed;              // Tốc độ di chuyển (theo ô)
     int droppedGold;        // Tiền rơi ra khi bị hạ
-
+    char symbol;
 public:
-    Enemy(int _health = 0, int _x = 0, int _y = 0, int _speed = 0, int _droppedGold = 0);
+    Enemy(int _health = 0, int _x = 0, int _y = 0, int _speed = 0, int _droppedGold = 0, char _symbol = 'N');
     void move();            // Phương thức di chuyển kẻ địch
     void takeDamage(int damage); // Phương thức nhận sát thương
     int getDroppedGold();   // Getter cho droppedGold
@@ -19,4 +19,5 @@ public:
     int getSpeed();
     void setPosition(int x, int y);
     Position getPosition() const; // Getter cho position
+    char getSymbol();
 };

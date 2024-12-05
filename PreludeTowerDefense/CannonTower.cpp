@@ -9,16 +9,13 @@ CannonTower::CannonTower(int damage, int range, const Position& position)
 CannonTower::~CannonTower() {}
 
 // Attack implementation
-void CannonTower::attack(std::vector<Enemy>& enemies) {
+void CannonTower::attack(std::vector<Enemy*>& enemies) {
     cout << "CannonTower attacking enemies in range!" << endl;
-
-    
-    for (Enemy& enemy : enemies) {
+  
+    for (Enemy* enemy : enemies) {
         // Kiểm tra kẻ địch trong phạm vi
-        if (position.distanceTo(enemy.getPosition()) <= range) {
-            enemy.takeDamage(damage); // Gây sát thương lên tất cả kẻ địch trong phạm vi
-            cout << "Enemy at (" << enemy.getPosition().x << ", " << enemy.getPosition().y
-                << ") took " << damage << " damage!" << endl;
+        if (enemy->getPosition().x >= 0 && position.distanceTo(enemy->getPosition()) <= range) {
+            enemy->takeDamage(damage); // Gây sát thương lên tất cả kẻ địch trong phạm vi
         }
     }
     
@@ -43,3 +40,4 @@ void CannonTower::attack(std::vector<Enemy>& enemies) {
     */
 
 }
+char CannonTower::getSymbol() {return 'C';}
