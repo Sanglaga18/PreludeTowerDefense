@@ -1,16 +1,12 @@
 ﻿#include "Position.h"
 
-Position::Position(int _x, int _y) {
-    x = _x;
-    y = _y;
-}
+Position::Position(int _x, int _y) : x(_x), y(_y) {}
 
-// Getters
-int Position::getX(){
+int Position::getX() const {
     return x;
 }
 
-int Position::getY(){
+int Position::getY() const {
     return y;
 }
 
@@ -26,4 +22,12 @@ void Position::setY(int _y) {
 // Phương thức tính khoảng cách Manhattan
 int Position::distanceTo(const Position& other) const {
     return abs(x - other.x) + abs(y - other.y);
+}
+
+Position& Position::operator=(const Position& other) {
+    if (this != &other) {
+        x = other.x;
+        y = other.y;
+    }
+    return *this;
 }

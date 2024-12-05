@@ -29,5 +29,5 @@ public:
     void printInfo();
 
     // Abstract method
-    virtual void attack(std::vector<Enemy>& enemies) = 0; // Hàm tấn công (thuần ảo).
+    virtual void attack(std::vector<Enemy*>& enemies) = 0; // Pure virtual function
 };

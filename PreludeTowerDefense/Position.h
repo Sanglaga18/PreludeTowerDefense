@@ -12,12 +12,13 @@ public:
 
     // Getters
     int getX() const;
-    int getY();
-
+    int getY() const;
     // Setters
+    
     void setX(int _x);
     void setY(int _y);
 
     // Phương thức tính khoảng cách Manhattan đến vị trí khác
     int distanceTo(const Position& other) const;
+    Position& operator=(const Position& other);
 };

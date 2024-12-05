@@ -15,7 +15,7 @@ private:
     vector<Tower*> towers;                   // Danh sách các tháp
     vector<Enemy*> enemies;                  // Danh sách các kẻ địch
     int mapLength;                           // Chiều dài bản đồ
-    vector<vector<int>> map;                 // Bản đồ trò chơi (ma trận 2D)
+    vector<vector<char>> map;                 // Bản đồ trò chơi (ma trận 2D)
     string difficulty;                       // Độ khó (Thường hoặc Khó)
 
 public:
@@ -26,5 +26,10 @@ public:
     ~Game();
 
     // Phương thức
-   
+    void displayGameState();
+    void handleUserInput();
+    void updateGameState();
+    void renderMap();
+    void addTower(Tower* tower);
+    void addEnemy(Enemy* enemy);
 };

@@ -1,17 +1,15 @@
-﻿#include <iostream>
-#include "Enemy.h"
+﻿#include "Enemy.h"
+#include <iostream>
+using namespace std;
 
-Enemy::Enemy(int _health, int _x, int _y, int _speed, int _droppedGold) {
-    health = _health;
-    position.x = _x;
-    position.y = _y;
-    speed = _speed;
-    droppedGold = _droppedGold;
-}
+
+Enemy::Enemy(const Position& pos, int hp, int speed, int gold)
+    : position(pos), health(hp), speed(speed), droppedGold(gold) {}
+
 // Phương thức di chuyển kẻ địch
 void Enemy::move() {
-    position.y += speed;    // Cập nhật tọa độ y và đi chuyển sang phải
-    cout << "Enemy moved to position: (" << position.x << ", " << position.y << ")" << endl;
+    position.setY(position.getY() + speed);    // Cập nhật tọa độ y và đi chuyển sang phải
+    cout << "Enemy moved to position: (" << position.getX() << ", " << position.getY() << ")" << endl;
 }
 
 // Phương thức nhận sát thương
@@ -29,20 +27,23 @@ int Enemy::getDroppedGold() {
 }
 
 // Getter cho health
-int Enemy::getHealth() {
+int Enemy::getHealth(){
     return health;
 }
 
-int Enemy::getSpeed() {
+int Enemy::getSpeed(){
     return speed;
 }
 
-void Enemy::setPosition(int x, int y) {
-    position.x = x;
-    position.y = y;
+Position Enemy::getPosition(){
+    return position;
 }
-// Getter cho position
-Position Enemy::getPosition() const {
-    return position;  // Trả về đối tượng position của Enemy
 
+void Enemy::setPosition(const Position& pos) {
+    position = pos;
+}
+
+void Enemy::setPosition(int x, int y) {
+    position.setX(x);
+    position.setY(y);
 }

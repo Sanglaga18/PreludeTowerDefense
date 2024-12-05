@@ -11,12 +11,15 @@ private:
     int droppedGold;        // Tiền rơi ra khi bị hạ
 
 public:
-    Enemy(int _health = 0, int _x = 0, int _y = 0, int _speed = 0, int _droppedGold = 0);
-    void move();            // Phương thức di chuyển kẻ địch
+    virtual ~Enemy() = default;
+    virtual void move();
+
+    Enemy(const Position& pos, int hp, int speed, int gold); // Constructor matching the argument list
     void takeDamage(int damage); // Phương thức nhận sát thương
     int getDroppedGold();   // Getter cho droppedGold
     int getHealth();        // Getter cho health
     int getSpeed();
+    Position getPosition(); // Getter cho position
+    void setPosition(const Position& pos); // Setter cho position
     void setPosition(int x, int y);
-    Position getPosition() const; // Getter cho position
 };
