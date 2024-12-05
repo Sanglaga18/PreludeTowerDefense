@@ -11,7 +11,7 @@ public:
     Position(int _x = 0, int _y = 0);
 
     // Getters
-    int getX();
+    int getX() const;
     int getY();
 
     // Setters
