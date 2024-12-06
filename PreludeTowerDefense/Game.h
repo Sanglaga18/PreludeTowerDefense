@@ -26,10 +26,12 @@ public:
     ~Game();
 
     // Phương thức
-    void displayGameState();
     void handleUserInput();
     void updateGameState();
     void renderMap();
     void addTower(Tower* tower);
     void addEnemy(Enemy* enemy);
+    void buyTower();
+    void sellTower();
+    bool isGameOver();
 };

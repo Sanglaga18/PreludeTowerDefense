@@ -2,26 +2,30 @@
 #include <iostream>
 using namespace std;
 
-void PowerTower::attack(std::vector<Enemy*>& enemies) {
-    cout << "PowerTower attacking with double damage!" << endl;
-    Enemy* target = nullptr;
-    int maxColumn = -1;
+// Constructor
+PowerTower::PowerTower(int damage, int range, const Position& position)
+    : Tower(damage, range, position), turnCounter(0) {}
 
-    // Tìm kẻ địch xa nhất trong phạm vi
-    for (Enemy* enemy : enemies) {
-        if (position.distanceTo(enemy->getPosition()) <= range) {
-            if (enemy->getPosition().getY() > maxColumn) {
-                maxColumn = enemy->getPosition().getY();
-                target = enemy;
-            }
-        }
+// Destructor
+PowerTower::~PowerTower() {}
+
+// Attack implementation
+void PowerTower::attack(std::vector<Enemy*>& enemies) {
+    turnCounter++;
+    if (turnCounter % 2 != 0) {
+        cout << "PowerTower is recharging and will attack next turn." << endl;
+        return;
     }
 
-    // Nếu có kẻ địch trong phạm vi, tấn công kẻ xa nhất
-    if (target) {
-        int doubleDamage = damage * 2;
-        target->takeDamage(doubleDamage);
-        cout << "Enemy at (" << target->getPosition().getX() << ", " << target->getPosition().getY()
-            << ") took " << doubleDamage << " damage!" << endl;
+    cout << "PowerTower attacking with double damage!" << endl;
+
+    for (Enemy* enemy : enemies) {
+        if (position.distanceTo(enemy->getPosition()) <= range) {
+            int doubleDamage = damage * 2;
+            enemy->takeDamage(doubleDamage); 
+            cout << "Enemy at (" << enemy->getPosition().getX() << ", " << enemy->getPosition().getY()
+                 << ") took " << doubleDamage << " damage!" << endl;
+            break; 
+        }
     }
 }
