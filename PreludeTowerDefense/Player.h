@@ -11,7 +11,7 @@ private:
 
 public:
     //khoi tao mau, vang, vi tri
-    Player(int initialHealth, int initialGold);
+    Player(int initialHealth = 20, int initialGold = 35);
     //get
     int getHealth() const;
     int getGold() const;
