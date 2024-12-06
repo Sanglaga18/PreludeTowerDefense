@@ -45,6 +45,9 @@
     <ClCompile Include="Game.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="NormalEnemy.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -72,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

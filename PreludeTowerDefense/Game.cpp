@@ -34,7 +34,7 @@ void Game::spawnEnemies() {
         usedCols.insert(col); 
 
         int type = rand() % 3; // 0: Enemy, 1: Fast, 2: Tank
-        if (type == 0) enemies.push_back(new Enemy(100, -col, 1, 1, 100));
+        if (type == 0) enemies.push_back(new NormalEnemy(100, -col, 1, 1, 100));
         else if (type == 1) enemies.push_back(new FastEnemy(100, -col, 1, 1, 100));
         else enemies.push_back(new TankEnemy(100, -col, 1, 1, 100));
     }
@@ -192,7 +192,9 @@ void Game::updateGame() {
     }
     drawMap();
 }
-
+const string red = "\033[31m";
+const string yellow = "\033[33m";
+const string reset = "\033[0m";
 void Game::run() {
     spawnEnemies();
     drawMap();
@@ -200,11 +202,23 @@ void Game::run() {
         placeTower();
         updateGame();
         if (player.getHealth() == 0) {
-            cout << "Game Over!" << endl;
+            cout << red;
+            cout << " *****       *     *       * *****      *****  *       * ***** *****   " << endl;
+            cout << "*     *     * *    * *   * * *         *     *  *     *  *     *    *  " << endl;
+            cout << "*         *******  *   *   * ***       *     *   *   *   ***   *****   " << endl;
+            cout << "*    ***  *     *  *       * *         *     *    * *    *     *  *    " << endl;
+            cout << " *****   *       * *       * *****      *****      *     ***** *    *  " << endl;
+            cout << reset;
             break;
         }
         if (enemies.empty()) {
-            cout << "You have defeated all enemies! You win!" << endl;
+            cout << yellow;
+            cout << "*       *  *****  *     *     *           * ***** *   * " << endl;
+            cout << "  *   *   *     * *     *      *         *    *   **  * " << endl;
+            cout << "    *     *     * *     *       *   *   *     *   * * * " << endl;
+            cout << "    *     *     * *     *        * * * *      *   *  ** " << endl;
+            cout << "    *      *****   *****          *   *     ***** *   * " << endl;
+            cout << reset;
             break;
         }
     }

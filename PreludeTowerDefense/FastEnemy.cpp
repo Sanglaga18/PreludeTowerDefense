@@ -8,7 +8,7 @@ FastEnemy::FastEnemy(int health, int x, int y, int speed, int _droppedGold, char
 
 // Ghi đè phương thức di chuyển
 void FastEnemy::move() {
-    setPosition(getPosition().x, getPosition().y - getSpeed());  // Cập nhật tọa độ y
+    setPosition(getPosition().x + getSpeed(), getPosition().y);  // Cập nhật tọa độ y
     cout << "FastEnemy moved to position: (" << getPosition().x << ", " << getPosition().y << ")" << endl;
 }
 

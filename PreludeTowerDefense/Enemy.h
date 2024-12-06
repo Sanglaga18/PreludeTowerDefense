@@ -12,7 +12,7 @@ private:
     char symbol;
 public:
     Enemy(int _health = 0, int _x = 0, int _y = 0, int _speed = 0, int _droppedGold = 0, char _symbol = 'N');
-    void move();            // Phương thức di chuyển kẻ địch
+    virtual void move() = 0;            // Phương thức di chuyển kẻ địch
     void takeDamage(int damage); // Phương thức nhận sát thương
     int getDroppedGold();   // Getter cho droppedGold
     int getHealth();        // Getter cho health

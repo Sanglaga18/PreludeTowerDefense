@@ -13,6 +13,7 @@
 #include "Enemy.h"
 #include "FastEnemy.h"
 #include "TankEnemy.h"
+#include "NormalEnemy.h"
 
 using namespace std;
 

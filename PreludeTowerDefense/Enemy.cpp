@@ -9,10 +9,6 @@ Enemy::Enemy(int _health, int _x, int _y, int _speed, int _droppedGold, char _sy
     droppedGold = _droppedGold;
     symbol = _symbol;
 }
-// Phương thức di chuyển kẻ địch
-void Enemy::move() {
-    position.x += speed;    // Cập nhật tọa độ y và đi chuyển sang phải
-}
 
 // Phương thức nhận sát thương
 void Enemy::takeDamage(int damage) {
