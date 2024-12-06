@@ -10,5 +10,5 @@ public:
     ~PowerTower();
 
     // Override the attack method
-    void attack(std::vector<Enemy>& enemies) override;
+    void attack(std::vector<Enemy*>& enemies);
 };

@@ -4,7 +4,7 @@ using namespace std;
 
 
 Player::Player(int initialHealth, int initialGold)
-    : health(20), gold(35) {}
+    : health(initialHealth), gold(initialGold) {}
 
 
 int Player::getHealth() const {

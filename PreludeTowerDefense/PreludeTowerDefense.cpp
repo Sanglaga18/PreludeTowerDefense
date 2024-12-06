@@ -2,12 +2,17 @@
 #include "Enemy.h"
 #include "FastEnemy.h"
 #include "Position.h"
+#include "Game.h"
 using namespace std;
 int main() {
-	Enemy enemy(100, 1, 10, 1, 100);    // Tạo một kẻ địch với 100 máu, vị trí (1, 10), tốc độ 1, và tiền rơi 100
-	enemy.move();                       // Kẻ địch di chuyển
-	enemy.takeDamage(10);               // Kẻ địch nhận sát thương
-	cout << "Gold dropped: " << enemy.getDroppedGold() << endl;
-	system("pause");
-	return 0;
+    Game game(10, "Normal");
+
+    while (game.getPlayer().getHealth() > 0) {
+        game.renderMap();
+        game.handleUserInput();
+        game.updateGameState();
+    }
+
+    cout << "Game Over!" << endl;
+    return 0;
 }

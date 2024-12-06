@@ -26,5 +26,11 @@ public:
     ~Game();
 
     // Phương thức
-   
+    void displayGameState();
+    void handleUserInput();
+    void updateGameState();
+    void renderMap();
+    void addTower(Tower* tower);
+    Player getPlayer();
+    void addEnemy(Enemy* enemy);
 };
