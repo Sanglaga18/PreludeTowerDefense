@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    srand(static_cast<unsigned int>(time(0))); // Seed the random number generator
+    srand(static_cast<unsigned int>(time(0))); //chay random bang int
 
     Game game(10, "Normal");
     int turnCounter = 0;
