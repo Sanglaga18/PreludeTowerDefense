@@ -1,30 +1,53 @@
 ﻿#pragma once
-
 #include <iostream>
 #include <vector>
 #include <string>
 #include "Player.h"
 #include "Tower.h"
+#include "CannonTower.h"
+#include "PowerTower.h"
 #include "Enemy.h"
-
+#include "FastEnemy.h"
+#include "TankEnemy.h"
 using namespace std;
 
 class Game {
 private:
-    Player player;                           // Người chơi
-    vector<Tower*> towers;                   // Danh sách các tháp
-    vector<Enemy*> enemies;                  // Danh sách các kẻ địch
-    int mapLength;                           // Chiều dài bản đồ
-    vector<vector<int>> map;                 // Bản đồ trò chơi (ma trận 2D)
-    string difficulty;                       // Độ khó (Thường hoặc Khó)
-
+    Player player;
+    vector<Tower*> towers;
+    vector<Enemy*> enemies;
+    vector<vector<string>> map;
+    int mapLength;
+    int difficulty;
+    int totalEnemiesSpawned;
 public:
     // Constructor
-    Game(int length = 10, string difficulty = "Normal");
+    Game(int initialGold = 100, int initialHealth = 10, int mapLength = 10, int difficulty = 3, int totalEnemiesSpawned = 0);
 
     // Destructor
     ~Game();
 
-    // Phương thức
-   
+    // Game setup
+    void initializeMap();
+    void displayMap();
+    void displayStatus();
+    void chooseDifficulty();
+
+    // Gameplay
+    void addTower(Tower* tower, int x, int y);
+    void spawnEnemy();
+    void updateGame();
+    void play();
+
+    // Helpers
+    bool isValidPosition(int x, int y);
+
+    bool checkWin();
+    bool checkLose();
+
+    // Getter cho totalEnemiesSpawned
+    int getTotalEnemiesSpawned() const;
+
+    // Setter cho totalEnemiesSpawned
+    void setTotalEnemiesSpawned(int count);
 };

@@ -3,7 +3,14 @@
 
 class TankEnemy : public Enemy {
 public:
-    // Hàm khởi tạo nhận giá trị
-    TankEnemy(int health = 0, int x = 0, int y = 0, int speed = 0, int _droppedGold = 0);
-    void move();
+    // Constructor
+    TankEnemy(int health = 85, int x = 0, int y = 1, int speed = 1, int droppedGold = 200);
+
+    // Override phương thức nhận sát thương
+    void takeDamage(int damage) override;
+
+    // Override phương thức getType
+    char getType() const override {
+        return 'T'; // 'T' đại diện cho TankEnemy
+    }
 };

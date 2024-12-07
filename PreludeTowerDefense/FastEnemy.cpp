@@ -2,12 +2,12 @@
 #include <iostream>
 using namespace std;
 
-// Định nghĩa hàm khởi tạo
-FastEnemy::FastEnemy(int health, int x, int y, int speed, int _droppedGold)
-    : Enemy(health, x, y, speed, _droppedGold) {}
+// Constructor
+FastEnemy::FastEnemy(int health, int x, int y, int speed, int droppedGold)
+    : Enemy(health, x, y, speed, droppedGold) {}
 
-// Ghi đè phương thức di chuyển
+// Override phương thức di chuyển
 void FastEnemy::move() {
-    setPosition(getPosition().x, getPosition().y - getSpeed() * 2);  // Cập nhật tọa độ y
-    cout << "FastEnemy moved to position: (" << getPosition().x << ", " << getPosition().y << ")" << endl;
+        position.x += (2 * speed); // Di chuyển nhanh hơn bằng cách nhân đôi tốc độ
+        //cout << "FastEnemy moved to position: (" << position.x << ", " << position.y << ")" << endl;
 }
