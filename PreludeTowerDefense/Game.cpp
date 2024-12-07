@@ -154,7 +154,7 @@ void Game::buyTower() {
     }
 
     // check du tien
-    if (player.getGold() >= 10) //gia tien
+    if (player.getGold() >= 10){ //gia tien
         player.addGold(-10); // tru tien
 
         if (towerType == 1) {
