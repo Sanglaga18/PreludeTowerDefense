@@ -8,19 +8,19 @@
 # Classes
 ### Enemy  
 Enemy: lớp cha đại diện cho quái trong game.  
-FastEnemy: Lớp con của enemy, thuộc tính nổi bật là khoảng cách di chuyển được x2.  
-TankEnemy: Lớp con của enemy, thuộc tính nổi bật là chịu được sát thương tốt hơn.
+FastEnemy: Lớp con của enemy, đặc điểm nổi bật là khoảng cách di chuyển được x2.  
+TankEnemy: Lớp con của enemy, đặc điểm nổi bật là chịu được sát thương tốt hơn.
 ### Tower
 Tower: lớp cha đại diện cho tháp trong game.  
-Cannon Tower: lớp con của tower, thuộc tính nổi bật là sát thương diện rộng.  
-Power Tower: lớp con của tower, thuộc tính nổi bật là sát thương lớn hơn.
+Cannon Tower: lớp con của tower, đặc điểm nổi bật là sát thương diện rộng.  
+Power Tower: lớp con của tower, đặc điểm nổi bật là sát thương lớn hơn.
 ### Player
 Player: lớp này đại diện cho người chơi, lưu trữ các thông tin liên quan như vàng, số mạng.
 ### Game
 Game: lớp này đại diện cho toàn bộ game, dùng để quản lý các thông tin như Player, Tower, Enemy, map, difficulty,...
 #  Giới Thiệu Game
 - Game sẽ có 3 độ khó, dựa vào đó số lượng enemy sẽ được tạo ra tương ứng là 3,6,9.
-- Bản đồ của game sẽ cố định là 3x9, với hai hàng 0,2 là nơi các Tower được đặt, hàng giữa là nơi Enemy di chuyển từ trái qua.
+- Bản đồ của game sẽ cố định là 3x10, với hai hàng 0,2 là nơi các Tower được đặt, hàng giữa là nơi Enemy di chuyển từ trái qua.
 
 |   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | X |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -36,7 +36,7 @@ Game: lớp này đại diện cho toàn bộ game, dùng để quản lý các 
 | 1 |   |   F|   | T  | F  |   |   |   |   |   |   
 | 2 |  C | P  |   |C   |   |   |   |   |   |   |  
 | Y |
-- Người chơi sẽ thắng khi tiêu diệt toàn bộ quái của độ khó mà mình chọn trong khi số mạng > 0. Ngược lại trò chơi sẽ thất bại nếu số mạng < 0.
+- Người chơi sẽ thắng khi tiêu diệt toàn bộ quái của độ khó mà mình chọn trong khi số mạng > 0. Ngược lại trò chơi sẽ kết thúc nếu số mạng < 0.
 
 # Cách chạy trên local
 
